@@ -1,0 +1,77 @@
+ScreenManager:
+    WelcomeScreen:
+    RegisterScreen:
+    ListScreen:
+
+<WelcomeScreen>:
+    name: "welcome"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 20
+        padding: 50
+
+        Label:
+            text: "Bem-vindo ao Apoio Emocional"
+            font_size: 24
+
+        Button:
+            text: "Sou Ouvinte"
+            on_release:
+                app.root.get_screen("register").ids.role.text = "Ouvinte"
+                root.manager.current = "register"
+
+        Button:
+            text: "Preciso de Ajuda"
+            on_release:
+                app.root.get_screen("register").ids.role.text = "Apoiado"
+                root.manager.current = "register"
+
+<RegisterScreen>:
+    name: "register"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 20
+
+        TextInput:
+            id: name
+            hint_text: "Nome"
+
+        TextInput:
+            id: age
+            hint_text: "Idade"
+            input_filter: "int"
+
+        TextInput:
+            id: desc
+            hint_text: "Descrição"
+
+        Label:
+            id: status
+            text: ""
+            color: 1, 0, 0, 1
+
+        TextInput:
+            id: role
+            text: ""
+            opacity: 0
+            size_hint_y: None
+            height: 0
+
+        Button:
+            text: "Cadastrar"
+            on_release:
+                root.register_user(role.text)
+
+<ListScreen>:
+    name: "list"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+
+        ScrollView:
+            GridLayout:
+                id: user_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height

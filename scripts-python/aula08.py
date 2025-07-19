@@ -1,0 +1,7 @@
+frase= str('Curso em Video Python')
+frase= frase.upper()
+print(f'Sua frase é: {frase}')
+print('-----------------------------------')
+frase2= str('Curso em video Python')
+frase2= frase.lower()
+print(f'Sua frase agora é: {frase2}')
