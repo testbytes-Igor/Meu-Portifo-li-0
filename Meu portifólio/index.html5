@@ -16,7 +16,7 @@
 
   <div id="message">Esta é uma mensagem que pode ser escondida.</div>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
   
 </body>
 </html>
