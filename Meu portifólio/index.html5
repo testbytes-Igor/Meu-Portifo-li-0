@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Igor Prado | Portfólio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Botões Interativos</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Olá, eu sou <span class="name">Igor Prado</span></h1>
-    <p class="typing"></p>
-  </div>
+
+  <h1>Projeto com Botões Interativos</h1>
+
+  <button id="btnAlert">Clique para Alerta</button>
+  <button id="btnChangeText">Clique para Mudar Texto</button>
+  <button id="btnToggle">Mostrar / Ocultar Mensagem</button>
+
+  <div id="message">Esta é uma mensagem que pode ser escondida.</div>
+
   <script src="script.js"></script>
+  
 </body>
 </html>

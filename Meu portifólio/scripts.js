@@ -1,33 +1,26 @@
-const texts = [
-  "Estudante de Engenharia de Software",
-  "Apaixonado por boas práticas",
-  "Explorando Inteligência Artificial",
-  "Amante de tecnologia e open source"
-];
+const btnAlert = document.getElementById('btnAlert');
+const btnChangeText = document.getElementById('btnChangeText');
+const btnToggle = document.getElementById('btnToggle');
+const messageDiv = document.getElementById('message');
 
-let index = 0;
-let charIndex = 0;
-let element = document.querySelector(".typing");
+btnAlert.addEventListener('click', () => {
+  alert('Você clicou no botão de alerta!');
+});
 
-function type() {
-  if (charIndex < texts[index].length) {
-    element.textContent += texts[index].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, 60);
+btnChangeText.addEventListener('click', () => {
+  // Muda o texto do botão btnChangeText a cada clique
+  if (btnChangeText.textContent === 'Clique para Mudar Texto') {
+    btnChangeText.textContent = 'Texto Alterado! Clique Novamente';
   } else {
-    setTimeout(erase, 1500);
+    btnChangeText.textContent = 'Clique para Mudar Texto';
   }
-}
+});
 
-function erase() {
-  if (charIndex > 0) {
-    element.textContent = texts[index].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 40);
+btnToggle.addEventListener('click', () => {
+  // Alterna a visibilidade da mensagem
+  if (messageDiv.style.display === 'none') {
+    messageDiv.style.display = 'block';
   } else {
-    index = (index + 1) % texts.length;
-    setTimeout(type, 400);
+    messageDiv.style.display = 'none';
   }
-}
-
-document.addEventListener("DOMContentLoaded", type);
+});
